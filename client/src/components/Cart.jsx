@@ -9,6 +9,7 @@ function Cart() {
     fetchCart();
   }, []);
 
+  
   const fetchCart = async () => {
     try {
       const res = await API.get("/cart");
