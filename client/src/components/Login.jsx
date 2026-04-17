@@ -13,6 +13,7 @@ export default function Login() {
                 if(res.status==200){
                     alert("Login successful")
                     localStorage.setItem("token",res.data.token)
+                    localStorage.setItem("role", res.data.user.role);
                     navigate("/")
                 }
             })
@@ -29,7 +30,7 @@ export default function Login() {
         <div className="row">
             <form onSubmit={handleLogin} className='col-12 col-md-6'>
                 <div className='mb-3'>
-                    <br/><h2>Login</h2>
+                    <h2>Login</h2>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="" className="form-label">Email</label>
